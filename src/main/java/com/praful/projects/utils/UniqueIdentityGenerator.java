@@ -24,7 +24,6 @@ public class UniqueIdentityGenerator {
 
 
     private static String getDatePrefix() {
-//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyMMddHHmmssSSS");
         SimpleDateFormat dateFormat = new SimpleDateFormat("MMddHHmm");
         return dateFormat.format(new Date());
     }

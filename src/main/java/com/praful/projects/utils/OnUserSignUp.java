@@ -3,6 +3,6 @@ package com.praful.projects.utils;
 /**
  * @author Prafulla Rathore
  */
-public interface OnUserCreate {
+public interface OnUserSignUp {
 
 }
