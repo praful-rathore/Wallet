@@ -58,7 +58,6 @@ response | {"headers":{},"body":{"txnId":"02022223008","originalTxnId":null,"mod
 API Name | Wallet Transfer
 ------------ | -------------
 Url | http://localhost:2704/wallet/api/wallet/transfer
-header | Authorization : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwMDAwMD
 method | POST
 request | {"amount":40}
 response | {"headers":{},"body":{"txnId":"02022229010","originalTxnId":null,"mode":"TRANSFER","amount":7.01,"txnStatus":"SUCCESS","walletLegs":[{"userId":"0000000001","sourceType":"CREDIT"},{"userId":"0000000000","sourceType":"DEBIT"}]},"statusCode":"OK","statusCodeValue":200}
@@ -67,6 +66,7 @@ API Name | Wallet Check Status
 ------------ | -------------
 Url | http://localhost:2704/wallet/api/wallet/status
 method | POST
+header | Authorization : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwMDAwMD
 request | {"txnId":"02022104001"}
 response | {"headers":{},"body":{"txnId":"02022104001","originalTxnId":null,"mode":"TRANSFER","amount":1.99,"txnStatus":"SUCCESS","walletLegs":[{"userId":"0000000000","sourceType":"DEBIT"},{"userId":"0000000001","sourceType":"CREDIT"}]},"statusCode":"OK","statusCodeValue":200}
 
@@ -74,5 +74,6 @@ API Name | Wallet Passbook
 ------------ | -------------
 Url | http://localhost:2704/wallet/api/wallet/passbook
 method | POST
+header | Authorization : Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwMDAwMD
 request | {}
 response | {"headers":{},"body":{"limit":20,"offset":0,"total":8,"results":[{"txnId":"02022229010","originalTxnId":null,"mode":"TRANSFER","amount":7.01,"txnStatus":"SUCCESS","walletLegs":[{"userId":"0000000001","sourceType":"CREDIT"},{"userId":"0000000000","sourceType":"DEBIT"}]}],"empty":false},"statusCode":"OK","statusCodeValue":200}
