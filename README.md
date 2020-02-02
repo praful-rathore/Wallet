@@ -26,13 +26,18 @@ java -jar -Dspring.config.location={application properties file location of this
 ```
 Verify application jar is running on port number 2705
 # Api's
-## User
-### SignUp
-Url | http://localhost:2704/wallet/api/user/signUp
+API Name | User SignUp
 ------------ | -------------
+Url | http://localhost:2704/wallet/api/user/signUp
 method | POST
 request | {"userId":"0000000000", "password":"Praf@1234"}
 response | {"headers":{},"body":{"userId":"0000000002","token":null,"walletBalance":0},"statusCode":"OK","statusCodeValue":200}
+------------ | -------------
+
+API Name | User SignIn
+------------ | -------------
+Url | http://localhost:2704/wallet/api/user/signIn
+method | POST
 
 ### SignIn
 ### SignOut
