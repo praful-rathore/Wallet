@@ -27,5 +27,11 @@ java -jar -Dspring.config.location={application properties file location of this
 Verify application jar is running on port number 2705
 # Api's
 ## User
+### SignUp
+### SignIn
+### SignOut
 ## Wallet
-
+### Recharge
+### Transfer
+### Check Status
+### Passbook
