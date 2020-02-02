@@ -31,20 +31,8 @@ Verify application jar is running on port number 2705
 Url | http://localhost:2704/wallet/api/user/signUp
 ------------ | -------------
 method | POST
-request | ```{
-	"userId":"0000000000",
-	"password":"Praf@1234"
-	}```
-response | ```{
-    "headers": {},
-    "body": {
-        "userId": "0000000002",
-        "token": null,
-        "walletBalance": 0
-    },
-    "statusCode": "OK",
-    "statusCodeValue": 200
-    }```
+request | {"userId":"0000000000", "password":"Praf@1234"}
+response | {"headers":{},"body":{"userId":"0000000002","token":null,"walletBalance":0},"statusCode":"OK","statusCodeValue":200}
 
 ### SignIn
 ### SignOut
