@@ -69,7 +69,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public ResponseEntity signOut(UserApiInput apiInput) {
         UserInfo userInfo = Utils.getUserInfo(apiInput);
-        User user = userEntityRepository.findById(userInfo.getId()).orElseThrow(() ->
+        User user = userEntityRepository.findByUserId(userInfo.getUserId()).orElseThrow(() ->
             new CustomException("UserID not Exist"));
         user.setToken(null);
         return ResponseEntity.ok(userEntityRepository.save(user));

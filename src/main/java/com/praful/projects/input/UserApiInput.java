@@ -1,19 +1,16 @@
 package com.praful.projects.input;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.praful.projects.utils.OnUserSignIn;
 import com.praful.projects.utils.OnUserSignUp;
+import com.praful.projects.utils.OnWalletTransfer;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 
 /**
  * @author Prafulla Rathore
@@ -23,9 +20,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UserApiInput extends ApiInput{
+public class UserApiInput extends ApiInput {
 
-    @NotNull(message = "UserID Invalid", groups = {OnUserSignUp.class, OnUserSignIn.class})
+    @NotNull(message = "UserID Invalid", groups = {OnUserSignUp.class, OnUserSignIn.class,
+        OnWalletTransfer.class})
     @Size(min = 10, max = 10, message = "UserID Invalid")
     @Pattern(regexp = "\\d+", message = "UserID Invalid")
     private String userId;

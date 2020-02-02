@@ -21,9 +21,7 @@ import org.hibernate.annotations.GenericGenerator;
 @Getter
 @Setter
 @JsonIgnoreProperties(value = {"handler", "hibernateLazyInitializer"})
-@Table(name = "user", indexes = {
-    @Index(name = "user_uk1", columnList = "id"),
-    @Index(name = "user_uk2", columnList = "user_id")})
+@Table(name = "user", indexes = {@Index(name = "user_uk2", columnList = "user_id")})
 public class User {
 
     @GeneratedValue(generator = "stringSequence", strategy = GenerationType.SEQUENCE)
@@ -45,6 +43,6 @@ public class User {
     @Column(name = "token", length = 256)
     private String token;
 
-    @Column(name = "balance", length = 64, nullable = false)
+    @Column(name = "wallet_balance", length = 64, nullable = false)
     private BigDecimal walletBalance;
 }

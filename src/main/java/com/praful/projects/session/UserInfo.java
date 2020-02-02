@@ -2,6 +2,7 @@ package com.praful.projects.session;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.praful.projects.entity.User;
+import java.math.BigDecimal;
 import java.util.Collection;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,14 +18,15 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Setter
 public class UserInfo implements UserDetails {
 
-    private String id;
     private String userId;
     @JsonIgnore
     private String password;
     private String token;
+    private BigDecimal walletBalance;
 
     public static UserInfo create(User user) {
-        return new UserInfo(user.getId(), user.getUserId(), user.getPassword(), user.getToken());
+        return new UserInfo(user.getUserId(), user.getPassword(), user.getToken(),
+            user.getWalletBalance());
     }
 
     @Override
